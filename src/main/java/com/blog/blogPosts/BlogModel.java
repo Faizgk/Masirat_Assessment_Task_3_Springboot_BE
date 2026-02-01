@@ -12,6 +12,7 @@ public class BlogModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     String title;
+    String featuredImage;
     String excerpt;
 
     public Long getId() {
@@ -24,6 +25,14 @@ public class BlogModel {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getFeaturedImage() {
+        return featuredImage;
+    }
+
+    public void setFeaturedImage(String featuredImage) {
+        this.featuredImage = featuredImage;
     }
 
     public void setId(Long id) {
@@ -39,13 +48,15 @@ public class BlogModel {
     }
 
 
+    public BlogModel(Long id, String title, String featuredImage, String excerpt) {
+        this.id = id;
+        this.title = title;
+        this.featuredImage = featuredImage;
+        this.excerpt = excerpt;
+    }
 
     public BlogModel() {
     }
 
-    public BlogModel(Long id, String title, String excerpt) {
-        this.id = id;
-        this.title = title;
-        this.excerpt = excerpt;
-    }
+
 }
